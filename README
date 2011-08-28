@@ -1,0 +1,14 @@
+This repo contains the MaxMSP libraries for GLORK, the Greensboro Laptop Orchestra.
+
+Patches are organized into these categories:
+* Controllers (data i/o for hardware MIDI/OSC controllers)
+
+To use this library in MaxMSP:
+* Clone the repository to a local directory on your machine
+* Add that directory as a search path in MaxMSP
+* Restart MaxMSP
+* Use the libraries! (for instance:)
+	* Create a new object in your Max patch (press "n")
+	* Enter the name of a GLORK object, i.e. GL_WiiMotion
+	* Press shift-cmd-H to get help on the object
+	Note: Some interface patches are optimized to be used within bpatchers
