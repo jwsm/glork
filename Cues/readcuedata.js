@@ -48,24 +48,24 @@ function readCueData(p) {
 }
 
 function query(q) {
-	if (rows[q] != null) {
-		outlet(0, new Array("cue", rows[q]['cue']));
-		outlet(0, new Array("cue_text", rows[q]['cue_text']));
-		if (rows[q+1] != null && rows[q+1]['cue_text'] != null) {
-			outlet(0, new Array("next_cue_text", rows[q+1]['cue_text']));
-		}
-		if (rows[q]['patcher_file'] != ""){
-			outlet(0, new Array("patcher_file", rows[q]['patcher_file']));
-		}
-		outlet(0, new Array("sub_patcher", rows[q]['sub_patcher']));
-		for (j=0; j<rows[q]['messages'].length;j++) {
-			if (rows[q]['messages'][j] != null &&
-				rows[q]['messages'][j]['to'] != null &&
-				rows[q]['messages'][j]['args'] != null) {
-					outlet(0, new Array("message",
-										rows[q]['messages'][j]['to'],
-										rows[q]['messages'][j]['args']));
-			}
-		}
-	}
+    if (rows[q] != null) {
+        outlet(0, new Array("cue", rows[q]['cue']));
+        outlet(0, new Array("cue_text", rows[q]['cue_text']));
+        if (rows[q+1] != null && rows[q+1]['cue_text'] != null) {
+            outlet(0, new Array("next_cue_text", rows[q+1]['cue_text']));
+        }
+        if (rows[q]['patcher_file'] != ""){
+            outlet(0, new Array("patcher_file", rows[q]['patcher_file']));
+        }
+        outlet(0, new Array("sub_patcher", rows[q]['sub_patcher']));
+        for (j=0; j<rows[q]['messages'].length;j++) {
+            if (rows[q]['messages'][j] != null &&
+                rows[q]['messages'][j]['to'] != null &&
+                rows[q]['messages'][j]['args'] != null) {
+                    outlet(0, new Array("message",
+                                        rows[q]['messages'][j]['to'].replace(/^\s+|\s+$/g, ''),
+                                        rows[q]['messages'][j]['args']));
+            }
+        }
+    }
 }
