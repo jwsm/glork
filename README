@@ -1,13 +1,21 @@
 This repo contains the MaxMSP libraries for GLORK, the Greensboro Laptop Orchestra.
 
 Patches are organized into these categories:
-* Controllers (data i/o for hardware MIDI/OSC controllers)
+* Controllers -- data i/o for hardware MIDI/OSC controllers
+* Cues -- patches to read, parse, and route cue data from files
+* Helpers -- small components used in other patches
+* Interfaces -- visual interfaces that perform various functions -- mainly bpatchers
+* Networking -- patches to aid in sending data between network nodes
+* UI -- standard user interface components for constructing a piece (cue display, visual mixers, etc.) -- mainly bpatchers
 
-To use this library in MaxMSP:
-* Clone the repository to a local directory on your machine
-* Add that directory as a search path in MaxMSP
+The glork libraries use the OSC routing patches provided by the CNMAT libraries, therefore the CNMAT libraries must be installed (see below).
+
+To use the glork libraries in MaxMSP:
+* Download and unzip the glork libs (or clone the repository using git).
+* Add the glork libs directory as a path in MaxMSP (under Options -> File Preferences...)
+* Download CNMAT-everything from http://cnmat.berkeley.edu/downloads, unzip it, and add it to the MaxMSP search path
 * Restart MaxMSP
-* Use the libraries! (for instance:)
+* Use the glork libraries! (for instance:)
 	* Create a new object in your Max patch (press "n")
 	* Enter the name of a GLORK object, i.e. GL_WiiMotion
 	* Press shift-cmd-H to get help on the object
